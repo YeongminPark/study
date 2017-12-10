@@ -11,24 +11,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/index_hidden', function(req, res, next) {
-  res.render('index_hidden');
-});
-
-router.get('/index_tail', function(req, res, next) {
-  res.render('index_tail');
-});
-
-router.get('/index_head', function(req, res, next) {
-  res.render('index_head');
-});
-
-router.get('/common_head', function(req, res, next) {
-  res.render('common_head', { title: 'Express' });
-});
 
 router.get('/detail', function(req, res, next) {
-  res.render('detail/detail', { title: 'Express' });
+  res.render('detail', { title: 'Express' });
+});
+
+router.get('/favorites', function(req, res, next) {
+  res.render('favorites', { title: 'Express', gab:4});
 });
 
 /*create*/
@@ -37,16 +26,8 @@ router.get('/create', function(req, res, next) {
   res.render('create', { title: 'Express',bar:bar });
 });
 
-router.get('/test', function(req, res, next) {
-  var test = 'select * from data';
-  connection.query(test, function(err,result){          
-    res.render('test', { title: 'Express',test:result });
-  })
-});
-
-router.get('/test2', function(req, res, next) {
-  res.render('test2', { title: 'Express' });
-  res.send(req.query.id);
+router.get('/mypage', function(req, res, next) {
+  res.render('mypage', { title: 'MyPage' });
 });
 
 module.exports = router;

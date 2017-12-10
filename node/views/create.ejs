@@ -1,10 +1,10 @@
 <html>
     <head>
-    <% include ./common_head %>
-    <% include ./index_hidden %> 
+    <% include ./common/common_head %>
+    <% include ./common/hidden %> 
     </head>
     <body style="background:#fff;">
-        <% include ./index_head %>
+        <% include ./common/header %>
         <div class="creatBar">
            <% for(var i = 0; i < bar.length; i++){ %>
             <ul>
@@ -151,6 +151,5 @@
                 <button class="rolBottom">▽</button>
             </div>
         </div>
-        <script src="js/create.js"></script>
     </body>   
 </html>
