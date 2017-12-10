@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./common_head %>
+</head>
+<body>
+    
+</body>
+</html>
+<script type="text/javascript">
+        /*$.ajax({
+            type:'GET',
+            url:'http://localhost:3000/test',
+            data:{name: "John", time: "2pm"},
+            success: function(data){ alert('Helo'); },
+            dataType: 'json'
+        }); */
+        var url = location.href;
+        var data = {};
+        var parameter = (url.slice(url.indexOf('?')+1).split('&'));
+        for(var i = 0; i < parameter.length; i++){
+            var pName = parameter[i].slice(0,parameter[i].indexOf('='));
+            var pValue = parameter[i].slice(parameter[i].indexOf('=')+1);
+            data[pName] = pValue;
+        }
+        console.log(data);
+</script>

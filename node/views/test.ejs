@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./common_head %>
+</head>
+<% var aa = 'Hello' %>
+<script type="text/javascript">
+    console.log("<%= aa %>");
+</script>
+<body>
+    <%=// JSON.stringify(test[0]) %>
+    <%=// test[0].id %>
+    <input type="text" id="name" /><br>
+    <input type="text" id="pass" /><br>
+    <button onclick="AjaxCall()">click</button>
+</body>
+<script type="text/javascript">
+    /*function createData() { 
+        var sendData = {name:$('#name').val()};
+        //var sendData = $('#AjaxForm').serialize();
+        //var sendData = JSON.stringify({name:$('#name').val(), email:$('#email').val()});
+        return sendData;
+    }
+    function AjaxCall(){
+        console.log(createData());
+        $.ajax({
+            type:"POST",
+            url:"test2",
+            data:createData(),
+            dataType:'json',
+            success:function(args){
+                alert('완료');
+            }
+        });
+    }*/
+    /*$.get("http://localhost:3000/test2",function(put){
+        alert(put);
+    });*/
+    /*$.get("http://localhost:3000/test2",function(put){
+        console.log(put);
+    });*/
+    function AjaxCall(){
+        location.href = "test2?id="+$('#name').val()+"&pass="+$('#pass').val();
+    }
+</script>
+</html>
